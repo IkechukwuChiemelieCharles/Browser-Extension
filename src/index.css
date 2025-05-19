@@ -1,0 +1,255 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* overflow-x: hidden; */
+}
+
+html {
+  font-size: 62.5%;
+}
+:root {
+  --Neutral900: hsl(227, 75%, 14%);
+  --Neutral800: hsl(226, 25%, 17%);
+  --Neutral700: hsl(225, 23%, 24%);
+  --Neutral600: hsl(226, 11%, 37%);
+  --Neutral300: hsl(0, 0%, 78%);
+  --Neutral200: hsl(217, 61%, 90%);
+  --Neutral100: hsl(0, 0%, 93%);
+  --Neutral0: hsl(200, 60%, 99%);
+
+  --Red400: hsl(3, 86%, 64%);
+  --Red500: hsl(3, 71%, 56%);
+  --Red700: hsl(3, 77%, 44%);
+
+  --LightGradient: linear-gradient(to 180deg, #ebf2fc 0%, #eef8f9 100%);
+  --DarkGradient: linear-gradient(180deg, #040918 0%, #091540 100%);
+}
+
+.theme2 {
+  --Neutral700: hsl(200, 60%, 99%);
+  --Neutral900: hsl(217, 61%, 90%);
+  --Neutral300: hsl(226, 25%, 17%);
+  --Neutral600: hsl(200, 60%, 99%);
+  --Neutral0: hsl(227, 75%, 14%);
+
+  /* --DarkGradient: linear-gradient(180deg, #040918 0%, #091540 100%); */
+
+  --DarkGradient: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+}
+
+@font-face {
+  font-family: "Font";
+  src: url("./fonts/NotoSans-VariableFont_wdth\,wght.ttf");
+}
+
+body {
+  font-family: "Font";
+  /* width: 100vw; */
+}
+
+.container {
+  background-color: var(--Neutral900) !important;
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5rem;
+  padding: 2rem 0;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  background-color: var(--Neutral700);
+  border-radius: 0.5rem;
+  /* height: 5rem; */
+  padding: 1rem;
+}
+
+.switch {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--Neutral900);
+  border-radius: 0.5rem;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+}
+.top h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--Neutral0);
+}
+
+.top .btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  gap: 2rem;
+}
+.btn1 {
+  padding: 1rem;
+  border: 1px solid var(--Neutral300);
+  border-radius: 2.3rem;
+  font-size: 1.8rem;
+  color: var(--Neutral300);
+  font-weight: 400;
+  background-color: var(--Neutral600);
+}
+
+.boxes {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 1.6rem;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  gap: 2.5rem;
+  border: 1px solid var(--Neutral600);
+  border-radius: 1rem;
+  background-color: var(--Neutral700);
+  padding: 2rem;
+
+  /* max-width: 39.2rem; */
+}
+
+.boxLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.intro {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.name {
+  color: var(--Neutral0);
+  font-size: 1.8rem;
+}
+
+.text {
+  color: var(--Neutral0);
+  font-size: 1.3rem;
+  color: var(--Neutral300);
+}
+
+.removeXtoggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* ///// */
+.toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  /* flex-direction: column; */
+  gap: 1.2rem;
+  width: 100%;
+}
+.bg {
+  width: 4.8rem;
+  height: 2.4rem;
+  border-radius: 5rem;
+  position: relative;
+  cursor: pointer;
+  background-color: var(--Neutral600);
+}
+.circle {
+  background-color: var(--Neutral0);
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 5rem;
+  /* padding: 0.9rem; */
+  top: 0.3rem;
+  right: 0.3rem;
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  left: 0.5rem;
+  transition: left 0.3s ease-in-out;
+}
+.bg.activeToggle .circle {
+  left: calc(100% - 2.2rem);
+}
+.activeToggle {
+  background-color: var(--Red700);
+}
+
+/* ////// */
+
+.removeBTN {
+  background: none;
+  padding: 1rem;
+  border-radius: 2rem;
+  border: 1px solid var(--Neutral600);
+  color: var(--Neutral0);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 640px) {
+  .boxes {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  nav,
+  .top,
+  main {
+    max-width: 124rem;
+  }
+  .boxes {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .top {
+    justify-content: space-between;
+
+    flex-direction: row;
+    gap: 0;
+  }
+  .top .btns {
+    width: auto;
+  }
+}
