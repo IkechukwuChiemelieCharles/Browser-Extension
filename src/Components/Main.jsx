@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { Children, useEffect, useState } from "react";
 
 const Main = () => {
   const [data, setdata] = useState([]);
+
+  const [activeBtn, setActiveBtn] = useState(false);
 
   useEffect(function () {
     async function fetchData() {
@@ -33,9 +35,21 @@ const Main = () => {
         <h1>Extension List</h1>
 
         <div className="btns">
-          <div className="btn1">All</div>
-          <div className="btn1">Active</div>
-          <div className="btn1">Inactive</div>
+          <Btn
+            label="All"
+            isActive={activeBtn === "All"}
+            onClick={() => setActiveBtn("All")}
+          ></Btn>
+          <Btn
+            label="Active"
+            isActive={activeBtn === "Active"}
+            onClick={() => setActiveBtn("Active")}
+          ></Btn>
+          <Btn
+            label="Inactive"
+            isActive={activeBtn === "inActive"}
+            onClick={() => setActiveBtn("inActive")}
+          ></Btn>
         </div>
       </div>
 
@@ -73,6 +87,16 @@ function Bottom() {
         <div className="circle"></div>
       </div>
     </div>
+  );
+}
+
+function Btn({ children, label, isActive, onClick }) {
+  return (
+    <>
+      <div className={`btn1 ${isActive ? "activeBtn" : ""}`} onClick={onClick}>
+        {label}
+      </div>
+    </>
   );
 }
 

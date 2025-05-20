@@ -78,6 +78,7 @@ nav {
   align-items: center;
   background-color: var(--Neutral900);
   border-radius: 0.5rem;
+  cursor: pointer;
 }
 
 main {
@@ -118,6 +119,12 @@ main {
   color: var(--Neutral300);
   font-weight: 400;
   background-color: var(--Neutral600);
+  cursor: pointer;
+}
+
+.activeBtn {
+  background-color: var(--Red700);
+  border: 1px solid var(--Red700);
 }
 
 .boxes {
